@@ -1,0 +1,47 @@
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Obsidian workspace (auto-generated)
+.obsidian/workspace.json
+.obsidian/workspace
+
+# Large binary files
+*.pptx
+*.ppt
+*.MP4
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.pdf
+*.psd
+*.ai
+*.xlsx
+*.xls
+*.docx
+*.doc
+*.exe
+*.dmg
+*.pkg
+*.zip
+*.tar.gz
+
+# Python/Node
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+env/
+
+# Temp files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~

@@ -1,0 +1,462 @@
+/* ═══════════════════════════════════════════════════════════
+ * NEO-RETRO DEV DECK · 复古未来主义·像素信息图·工程笔记本感
+ *
+ * 设计规范（notebooklm-slide-prompts Neo-Retro Dev Deck）
+ * Canvas:  网格纸背景 · 纯色块堆叠 · 厚黑边框
+ * 配色:    Hot Pink #FF1493 · Yellow #FFD700 · Cyan #00BFFF · Black · Cream
+ * 字体:    Bold condensed sans + JetBrains Mono 等宽
+ * 禁止:    ❌ 渐变 ❌ 柔阴影 ❌ 圆角 ❌ 照片 ❌ 企业模板
+ * ═══════════════════════════════════════════════════════════ */
+
+/* ─── 1. GLOBAL — Canvas + Tokens ─── */
+.tpl-health-lecture {
+  --pink: #FF1493;
+  --yellow: #FFD700;
+  --cyan: #00BFFF;
+  --black: #000000;
+  --cream: #F5F0E8;
+  --white: #FFFFFF;
+  --red: #DC2626;
+  --green: #16A34A;
+  --grid: rgba(0,0,0,0.06);
+  --mono: 'JetBrains Mono','IBM Plex Mono',monospace;
+
+  --bg: var(--cream);
+  --bg-soft: #EDE8DC;
+  --surface: var(--white);
+  --surface-2: #F5F0E8;
+  --border: var(--black);
+  --text-1: var(--black);
+  --text-2: #333;
+  --text-3: #666;
+  --accent: var(--pink);
+  --accent-2: var(--cyan);
+  --accent-3: var(--yellow);
+  --good: var(--green);
+  --warn: #D97706;
+  --bad: var(--red);
+  --radius: 0;
+  --radius-sm: 0;
+  --radius-lg: 0;
+  --shadow: none;
+  --shadow-lg: none;
+
+  background: var(--cream);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 20px 20px;
+  font-family: 'Inter','Noto Sans SC','Helvetica Neue',sans-serif;
+  font-weight: 700;
+}
+
+.tpl-health-lecture .slide {
+  border: none !important;
+  padding: 48px 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ─── 2. TYPOGRAPHY ─── */
+.tpl-health-lecture .accent { color: var(--pink); }
+.tpl-health-lecture .dim { color: #555; font-size: 15px; line-height: 1.5; font-weight: 400; }
+.tpl-health-lecture .mono {
+  font-family: var(--mono); font-size: 12px;
+  background: rgba(0,0,0,0.06);
+  padding: 2px 8px; border: 1px solid var(--black); color: var(--black);
+}
+.tpl-health-lecture .kicker {
+  font-family: var(--mono); font-size: 11px; color: #888;
+  letter-spacing: 0.1em; text-transform: uppercase; margin: 0 0 12px 0;
+  border-bottom: 1px solid var(--black); padding-bottom: 5px; display: inline-block;
+}
+.tpl-health-lecture .h1 {
+  font-size: clamp(44px,5vw,72px); line-height: 1.0;
+  letter-spacing: -0.03em; margin: 0 0 16px 0; font-weight: 900;
+  text-transform: uppercase;
+}
+.tpl-health-lecture .h2 {
+  font-size: clamp(28px,3.4vw,48px); line-height: 1.1;
+  letter-spacing: -0.02em; margin: 0 0 10px 0; font-weight: 800;
+}
+.tpl-health-lecture .subtitle {
+  font-size: 18px; color: #555; margin: 0;
+  font-family: var(--mono);
+  border-left: 3px solid var(--cyan); padding-left: 12px;
+}
+
+/* ─── 3. THICK FRAME SYSTEM ─── */
+.tpl-health-lecture .frame { border: 3px solid var(--black); }
+
+/* ─── 4. DECK FOOTER ─── */
+.tpl-health-lecture .deck-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 0 0; margin-top: auto;
+  border-top: 3px solid var(--black);
+  font-size: 11px; color: #666; font-family: var(--mono);
+}
+
+/* ─── 5. COVER ─── */
+.tpl-health-lecture .cover-content { max-width: 820px; }
+.tpl-health-lecture .cover-title {
+  font-size: clamp(52px,6.4vw,88px); line-height: 1.0;
+  font-weight: 900; text-transform: uppercase;
+  margin: 0 0 14px 0; color: var(--black); letter-spacing: -0.04em;
+}
+.tpl-health-lecture .cover-sub {
+  font-size: 20px; line-height: 1.4; color: #444;
+  margin: 0 0 24px 0; max-width: 600px; font-family: var(--mono);
+  border-left: 3px solid var(--pink); padding-left: 14px;
+}
+.tpl-health-lecture .cover-meta { display: flex; gap: 8px; flex-wrap: wrap; }
+.tpl-health-lecture .pill {
+  display: inline-block; padding: 5px 14px;
+  font-size: 12px; font-weight: 700;
+  border: 2px solid var(--black); background: var(--white); color: var(--black);
+  font-family: var(--mono); text-transform: uppercase;
+}
+.tpl-health-lecture .pill-accent {
+  background: var(--pink); color: var(--white);
+  border-color: var(--black);
+}
+
+/* ─── 6. PAIN CARD ─── */
+.tpl-health-lecture .pain-card {
+  display: flex; align-items: center; gap: 28px;
+  padding: 28px 32px;
+  background: var(--white); border: 3px solid var(--black);
+  box-shadow: 5px 5px 0 var(--red);
+}
+.tpl-health-lecture .pain-icon { font-size: 48px; flex-shrink: 0; }
+.tpl-health-lecture .pain-text { text-align: center; flex: 1; }
+.tpl-health-lecture .pain-main { font-size: 22px; font-weight: 700; margin: 0; }
+.tpl-health-lecture .pain-arrow {
+  font-size: 18px; color: var(--red); margin: 4px 0; font-family: var(--mono);
+}
+.tpl-health-lecture .pain-quote { font-weight: 400; color: #555; }
+.tpl-health-lecture .pain-question { font-size: 20px; margin: 6px 0 0 0; }
+
+/* ─── 7. GOAL GRID ─── */
+.tpl-health-lecture .goal-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+.tpl-health-lecture .goal-card {
+  padding: 24px 20px; background: var(--white); border: 3px solid var(--black);
+  text-align: center; transition: transform .15s;
+}
+.tpl-health-lecture .goal-card:hover { transform: translate(-2px,-2px); box-shadow: 4px 4px 0 var(--pink); }
+.tpl-health-lecture .goal-num {
+  font-size: 34px; font-weight: 900; color: var(--pink);
+  margin-bottom: 6px; font-family: var(--mono);
+}
+.tpl-health-lecture .goal-card h3 { font-size: 19px; margin: 0 0 8px 0; font-weight: 700; }
+.tpl-health-lecture .goal-card .dim { font-size: 13px; color: #555; margin: 0; }
+
+/* ─── 8. HIERARCHY ─── */
+.tpl-health-lecture .hierarchy { display: flex; align-items: center; justify-content: center; gap: 4px; flex-wrap: wrap; }
+.tpl-health-lecture .h-level {
+  padding: 12px 18px; font-size: 16px; font-weight: 800;
+  color: var(--white); border: 3px solid var(--black);
+  text-align: center; min-width: 52px; font-family: var(--mono); text-transform: uppercase;
+}
+.tpl-health-lecture .h-cell   { background: var(--pink);   box-shadow: 3px 3px 0 var(--black); }
+.tpl-health-lecture .h-tissue { background: #D946EF;      box-shadow: 3px 3px 0 var(--black); }
+.tpl-health-lecture .h-organ  { background: var(--cyan);   box-shadow: 3px 3px 0 var(--black); }
+.tpl-health-lecture .h-system { background: var(--yellow); color: var(--black); box-shadow: 3px 3px 0 var(--black); }
+.tpl-health-lecture .h-human  { background: var(--black);  }
+.tpl-health-lecture .h-arrow  { font-size: 20px; color: var(--black); font-weight: 700; font-family: var(--mono); }
+.tpl-health-lecture .formula-box {
+  text-align: center; padding: 16px 28px;
+  background: var(--white); border: 3px solid var(--black);
+  box-shadow: 5px 5px 0 var(--black); max-width: 400px; margin: 0 auto;
+}
+.tpl-health-lecture .formula-label {
+  display: block; font-size: 10px; text-transform: uppercase; letter-spacing: .12em;
+  color: var(--pink); margin-bottom: 4px; font-family: var(--mono);
+}
+.tpl-health-lecture .formula-text { font-size: 20px; font-weight: 700; }
+.tpl-health-lecture .formula-text .eq { margin: 0 8px; color: var(--cyan); font-weight: 900; }
+
+/* ─── 9. NUTRIENT GRID ─── */
+.tpl-health-lecture .nutrient-grid { display: grid; grid-template-columns: repeat(7,1fr); gap: 10px; }
+.tpl-health-lecture .nutrient-card {
+  text-align: center; padding: 16px 4px;
+  background: var(--white); border: 3px solid var(--black);
+  transition: transform .15s;
+}
+.tpl-health-lecture .nutrient-card:hover { transform: translate(-2px,-2px); box-shadow: 4px 4px 0 var(--pink); }
+.tpl-health-lecture .nutri-icon { font-size: 32px; margin-bottom: 4px; }
+.tpl-health-lecture .nutrient-card h4 { font-size: 13px; margin: 0; font-weight: 700; font-family: var(--mono); }
+.tpl-health-lecture .nutrient-caption { text-align: center; font-size: 16px; }
+
+/* ─── 10. BIG QUOTE ─── */
+.tpl-health-lecture .center-quote { text-align: center; padding: 16px 0; }
+.tpl-health-lecture .big-quote-text {
+  font-size: clamp(30px,3.8vw,48px); font-weight: 800; line-height: 1.15;
+  margin: 0 0 4px 0; color: var(--black); text-transform: uppercase;
+}
+.tpl-health-lecture .big-quote-text.accent {
+  color: var(--pink); font-size: clamp(34px,4.2vw,54px);
+  display: inline-block; border-bottom: 4px solid var(--black); padding-bottom: 4px;
+}
+.tpl-health-lecture .big-quote-by { font-size: 14px; color: #888; margin-top: 14px; font-family: var(--mono); }
+
+/* ─── 11. COMPARISON ─── */
+.tpl-health-lecture .comparison-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 14px; align-items: center; }
+.tpl-health-lecture .comp-card { padding: 24px 18px; text-align: center; background: var(--white); border: 3px solid var(--black); }
+.tpl-health-lecture .comp-wrong { box-shadow: 5px 5px 0 var(--red); }
+.tpl-health-lecture .comp-right { box-shadow: 5px 5px 0 var(--green); }
+.tpl-health-lecture .comp-tag { font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: #888; margin-bottom: 6px; font-family: var(--mono); }
+.tpl-health-lecture .comp-icon { font-size: 36px; margin-bottom: 8px; }
+.tpl-health-lecture .comp-text { font-size: 15px; line-height: 1.5; margin: 0; }
+.tpl-health-lecture .comp-vs {
+  font-size: 16px; font-weight: 900; color: var(--white);
+  background: var(--black); width: 46px; height: 46px;
+  display: flex; align-items: center; justify-content: center;
+  border: 3px solid var(--black); flex-shrink: 0; font-family: var(--mono);
+}
+
+/* ─── 12. CONCEPT BLOCK ─── */
+.tpl-health-lecture .concept-block { text-align: center; }
+.tpl-health-lecture .concept-main { font-size: 28px; font-weight: 800; margin: 0; }
+.tpl-health-lecture .concept-arrow { font-size: 22px; color: var(--pink); margin: 8px 0; font-family: var(--mono); }
+.tpl-health-lecture .concept-warn { font-size: 22px; font-weight: 600; margin: 0; }
+.tpl-health-lecture .analogy-box {
+  display: flex; gap: 16px; padding: 16px 20px;
+  background: var(--white); border: 3px solid var(--black);
+  box-shadow: 4px 4px 0 var(--cyan); align-items: flex-start;
+}
+.tpl-health-lecture .analogy-icon { font-size: 32px; flex-shrink: 0; }
+.tpl-health-lecture .analogy-title { font-size: 16px; font-weight: 700; margin: 0 0 2px 0; }
+
+/* ─── 13. IMPACT TEXT ─── */
+.tpl-health-lecture .full-impact { text-align: center; padding: 32px 0; }
+.tpl-health-lecture .impact-text {
+  font-size: clamp(34px,4.6vw,60px); font-weight: 900; line-height: 1.1;
+  margin: 0; text-transform: uppercase;
+}
+.tpl-health-lecture .impact-text.accent { color: var(--pink); }
+.tpl-health-lecture .impact-big {
+  font-size: clamp(40px,5.4vw,72px); font-weight: 900;
+  background: var(--yellow); padding: 0 8px; border: 3px solid var(--black); display: inline-block;
+}
+.tpl-health-lecture .impact-divider { font-size: 24px; margin: 8px 0; font-family: var(--mono); font-weight: 700; }
+
+/* ─── 14. ORGAN GRID ─── */
+.tpl-health-lecture .organ-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 20px; align-items: start; }
+.tpl-health-lecture .organ-col { padding: 20px; background: var(--white); border: 3px solid var(--black); }
+.tpl-health-lecture .organ-vital   { box-shadow: 5px 5px 0 var(--green); }
+.tpl-health-lecture .organ-sacrifice { box-shadow: 5px 5px 0 var(--red); }
+.tpl-health-lecture .organ-col-title { font-size: 18px; margin: 0 0 14px 0; text-align: center; line-height: 1.3; font-weight: 800; }
+.tpl-health-lecture .organ-list { display: flex; flex-direction: column; gap: 6px; }
+.tpl-health-lecture .organ-item {
+  display: block; padding: 6px 12px; background: var(--cream);
+  border: 2px solid var(--black); font-size: 15px; font-weight: 600;
+  text-align: center; font-family: var(--mono);
+}
+.tpl-health-lecture .organ-item.sacrifice {
+  opacity: .7; background: rgba(220,38,38,.04); border-color: var(--red);
+}
+.tpl-health-lecture .organ-divider { width: 4px; align-self: stretch; background: var(--black); }
+
+/* ─── 15. SIGNAL GRID ─── */
+.tpl-health-lecture .signal-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; }
+.tpl-health-lecture .signal-item {
+  display: flex; align-items: center; gap: 6px;
+  padding: 10px 12px; background: var(--white);
+  border: 2px solid var(--black); font-size: 14px; font-weight: 600;
+}
+.tpl-health-lecture .signal-icon { font-size: 18px; flex-shrink: 0; }
+.tpl-health-lecture .signal-conclusion { display: flex; align-items: center; gap: 10px; justify-content: center; }
+.tpl-health-lecture .signal-arrow { font-size: 26px; color: var(--pink); flex-shrink: 0; font-family: var(--mono); }
+.tpl-health-lecture .signal-text {
+  font-size: 17px; margin: 0;
+  background: var(--yellow); padding: 6px 14px; border: 2px solid var(--black);
+}
+
+/* ─── 16. CALCULATOR ─── */
+.tpl-health-lecture .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.tpl-health-lecture .calc-card { padding: 20px 24px; background: var(--white); border: 3px solid var(--black); }
+.tpl-health-lecture .calc-card:first-child { box-shadow: 5px 5px 0 var(--cyan); }
+.tpl-health-lecture .calc-card:last-child  { box-shadow: 5px 5px 0 var(--pink); }
+.tpl-health-lecture .calc-icon { font-size: 28px; margin-bottom: 4px; }
+.tpl-health-lecture .calc-card h3 { font-size: 18px; margin: 0 0 14px 0; font-weight: 800; }
+.tpl-health-lecture .calc-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 2px solid rgba(0,0,0,.06); }
+.tpl-health-lecture .calc-row:last-of-type { border-bottom: none; }
+.tpl-health-lecture .calc-label { font-size: 15px; color: #555; }
+.tpl-health-lecture .calc-val { font-size: 17px; font-weight: 700; font-family: var(--mono); }
+.tpl-health-lecture .calc-val.warn { color: #D97706; }
+.tpl-health-lecture .calc-val.bad { color: var(--red); }
+.tpl-health-lecture .calc-deficit { background: rgba(220,38,38,.04); margin: 0 -24px; padding: 6px 24px; border-top: 2px dashed var(--red); }
+.tpl-health-lecture .calc-bottom { text-align: center; font-size: 18px; color: #555; }
+
+/* ─── 17. PRODUCT CARDS ─── */
+.tpl-health-lecture .product-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+.tpl-health-lecture .product-card {
+  padding: 24px 20px; background: var(--white); border: 3px solid var(--black);
+  text-align: center; transition: transform .15s;
+}
+.tpl-health-lecture .product-card:hover { transform: translate(-2px,-2px); }
+.tpl-health-lecture .product-card:nth-child(1) { box-shadow: 4px 4px 0 var(--pink); }
+.tpl-health-lecture .product-card:nth-child(2) { box-shadow: 4px 4px 0 var(--yellow); }
+.tpl-health-lecture .product-card:nth-child(3) { box-shadow: 4px 4px 0 var(--cyan); }
+.tpl-health-lecture .product-icon {
+  width: 56px; height: 56px; display: flex; align-items: center; justify-content: center;
+  font-size: 28px; margin: 0 auto 12px; border: 2px solid var(--black);
+}
+.tpl-health-lecture .pc-protein { background: var(--pink); }
+.tpl-health-lecture .pc-vitc   { background: var(--yellow); }
+.tpl-health-lecture .pc-combo  { background: var(--cyan); }
+.tpl-health-lecture .product-card h3 { font-size: 18px; margin: 0 0 6px 0; font-weight: 800; }
+.tpl-health-lecture .product-desc { font-size: 13px; color: #555; line-height: 1.5; margin: 0; }
+
+/* ─── 18. FLOW DIAGRAM ─── */
+.tpl-health-lecture .flow-diagram { display: flex; align-items: center; justify-content: center; gap: 6px; flex-wrap: wrap; }
+.tpl-health-lecture .flow-box {
+  padding: 14px 20px; font-size: 15px; font-weight: 800;
+  border: 3px solid var(--black); text-align: center; line-height: 1.3;
+  font-family: var(--mono); text-transform: uppercase;
+}
+.tpl-health-lecture .flow-start  { background: var(--pink);   color: var(--white); box-shadow: 3px 3px 0 var(--black); }
+.tpl-health-lecture .flow-mid    { background: var(--yellow); box-shadow: 3px 3px 0 var(--black); }
+.tpl-health-lecture .flow-end    { background: var(--cyan);   color: var(--white); box-shadow: 3px 3px 0 var(--black); }
+.tpl-health-lecture .flow-result { background: var(--black);  color: var(--white); }
+.tpl-health-lecture .flow-arrow { font-size: 20px; color: var(--black); font-family: var(--mono); }
+.tpl-health-lecture .key-message {
+  text-align: center; padding: 16px 22px;
+  background: var(--white); border: 3px solid var(--black); border-left: 6px solid var(--pink);
+}
+.tpl-health-lecture .key-text { font-size: 22px; margin: 0 0 4px 0; font-family: var(--mono); text-transform: uppercase; }
+.tpl-health-lecture .key-sub { font-size: 14px; margin: 0; }
+
+/* ─── 19. WORTH ─── */
+.tpl-health-lecture .worth-section { text-align: center; }
+.tpl-health-lecture .worth-question { font-size: clamp(38px,4.8vw,60px); color: var(--pink); font-family: var(--mono); }
+.tpl-health-lecture .worth-price {
+  font-size: clamp(34px,4.2vw,52px); font-weight: 900;
+  font-family: var(--mono); background: var(--white);
+  border: 3px solid var(--black); padding: 12px 28px; display: inline-block;
+}
+.tpl-health-lecture .worth-price small { font-size: .35em; font-weight: 400; color: #555; }
+.tpl-health-lecture .worth-prompt { font-size: 20px; line-height: 1.4; font-weight: 600; }
+.tpl-health-lecture .worth-comparison { max-width: 400px; margin: 0 auto; background: var(--white); border: 2px solid var(--black); }
+.tpl-health-lecture .worth-item {
+  display: flex; justify-content: space-between; padding: 7px 12px;
+  border-bottom: 1px solid rgba(0,0,0,.08); font-size: 15px; color: #555; font-family: var(--mono);
+}
+.tpl-health-lecture .worth-item:last-child { border-bottom: none; }
+
+/* ─── 20. PRICE TABLE ─── */
+.tpl-health-lecture .price-table { border: 3px solid var(--black); }
+.tpl-health-lecture .price-row {
+  display: grid; grid-template-columns: 1fr auto auto; gap: 16px;
+  align-items: center; padding: 12px 20px; border-bottom: 2px solid var(--black); font-size: 15px;
+}
+.tpl-health-lecture .price-row:last-child { border-bottom: none; }
+.tpl-health-lecture .price-header {
+  background: var(--black); color: var(--white); font-weight: 700;
+  font-size: 11px; text-transform: uppercase; letter-spacing: .06em; font-family: var(--mono);
+}
+.tpl-health-lecture .price-normal { background: var(--white); }
+.tpl-health-lecture .price-good   { background: rgba(22,163,74,.04); }
+.tpl-health-lecture .price-better { background: rgba(22,163,74,.06); }
+.tpl-health-lecture .price-best   { background: rgba(255,215,0,.08); }
+.tpl-health-lecture .price-num { font-family: var(--mono); font-weight: 700; font-size: 17px; }
+.tpl-health-lecture .price-num.highlight { color: var(--green); }
+.tpl-health-lecture .price-num.best { color: #B8860B; font-size: 20px; font-weight: 900; }
+.tpl-health-lecture .price-tag {
+  font-size: 11px; font-weight: 700; padding: 2px 8px;
+  border: 2px solid var(--black); font-family: var(--mono);
+}
+.tpl-health-lecture .tag-green { background: var(--green); color: var(--white); }
+.tpl-health-lecture .tag-gold  { background: var(--yellow); color: var(--black); }
+
+/* ─── 21. SIGN STEPS ─── */
+.tpl-health-lecture .sign-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.tpl-health-lecture .sign-step {
+  display: flex; gap: 12px; align-items: flex-start;
+  padding: 16px 18px; background: var(--white); border: 3px solid var(--black);
+  transition: transform .15s;
+}
+.tpl-health-lecture .sign-step:hover { transform: translate(-2px,-2px); box-shadow: 4px 4px 0 var(--black); }
+.tpl-health-lecture .sign-num {
+  width: 32px; height: 32px; background: var(--black); color: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 900; font-size: 15px; flex-shrink: 0; font-family: var(--mono);
+}
+.tpl-health-lecture .sign-label {
+  display: block; font-size: 11px; text-transform: uppercase; letter-spacing: .08em;
+  color: var(--pink); font-weight: 700; margin-bottom: 2px; font-family: var(--mono);
+}
+.tpl-health-lecture .sign-desc { margin: 0; font-size: 14px; line-height: 1.5; }
+
+/* ─── 22. SCRIPT BOX ─── */
+.tpl-health-lecture .script-box { max-width: 680px; margin: 0 auto; }
+.tpl-health-lecture .script-line {
+  display: flex; gap: 12px; padding: 12px 16px;
+  border-bottom: 2px solid var(--black); align-items: flex-start;
+}
+.tpl-health-lecture .script-line:last-child { border-bottom: none; }
+.tpl-health-lecture .script-num { font-size: 16px; font-weight: 900; color: var(--cyan); flex-shrink: 0; font-family: var(--mono); width: 26px; }
+.tpl-health-lecture .script-line p { margin: 0; font-size: 14px; line-height: 1.55; }
+
+/* ─── 23. CHOICE CARDS ─── */
+.tpl-health-lecture .choice-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: center; }
+.tpl-health-lecture .choice-card { padding: 28px 20px; text-align: center; background: var(--white); border: 3px solid var(--black); }
+.tpl-health-lecture .choice-bad  { box-shadow: 5px 5px 0 var(--red); }
+.tpl-health-lecture .choice-good { box-shadow: 5px 5px 0 var(--green); }
+.tpl-health-lecture .choice-icon { font-size: 38px; margin-bottom: 8px; }
+.tpl-health-lecture .choice-card h3 { font-size: 20px; margin: 0 0 10px 0; font-weight: 800; }
+.tpl-health-lecture .choice-desc { font-size: 15px; line-height: 1.5; color: #555; margin: 0; }
+.tpl-health-lecture .choice-vs {
+  font-size: 16px; font-weight: 900; color: var(--white);
+  background: var(--black); width: 50px; height: 50px;
+  display: flex; align-items: center; justify-content: center;
+  border: 3px solid var(--black); flex-shrink: 0; font-family: var(--mono);
+}
+
+/* ─── 24. CTA ─── */
+.tpl-health-lecture .cta-section { text-align: center; }
+.tpl-health-lecture .cta-card {
+  padding: 28px 36px; background: var(--white);
+  border: 3px solid var(--black); box-shadow: 6px 6px 0 var(--pink);
+  max-width: 460px; margin: 0 auto;
+}
+.tpl-health-lecture .cta-text {
+  font-size: clamp(26px,3.4vw,40px); font-weight: 900;
+  margin: 0; line-height: 1.15; text-transform: uppercase;
+}
+.tpl-health-lecture .cta-text.accent { color: var(--pink); font-size: clamp(34px,4.6vw,56px); }
+.tpl-health-lecture .cta-sub { font-size: 16px; color: #555; margin: 8px 0 0 0; font-family: var(--mono); }
+.tpl-health-lecture .cta-extra { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+
+/* ─── 25. KEYBOARD HINT ─── */
+.tpl-health-lecture .kbd-hint {
+  position: fixed; bottom: 14px; left: 50%; transform: translateX(-50%);
+  font-size: 10px; color: #666; z-index: 100; pointer-events: none;
+  background: var(--white); padding: 4px 14px; border: 2px solid var(--black);
+  font-family: var(--mono); letter-spacing: .05em; white-space: nowrap;
+}
+.tpl-health-lecture .kbd-hint kbd {
+  font-family: var(--mono); font-size: 9px;
+  background: var(--black); color: var(--white); padding: 1px 5px;
+}
+
+/* ─── 26. HELPERS ─── */
+.tpl-health-lecture .mt-m { margin-top: 20px; }
+.tpl-health-lecture .mt-l { margin-top: 30px; }
+
+/* ─── 27. RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .tpl-health-lecture .slide { padding: 36px 28px; }
+  .tpl-health-lecture .nutrient-grid { grid-template-columns: repeat(4,1fr); }
+  .tpl-health-lecture .signal-grid { grid-template-columns: repeat(2,1fr); }
+  .tpl-health-lecture .goal-grid,
+  .tpl-health-lecture .product-grid { grid-template-columns: 1fr; }
+  .tpl-health-lecture .sign-steps { grid-template-columns: 1fr; }
+  .tpl-health-lecture .comparison-grid,
+  .tpl-health-lecture .choice-grid,
+  .tpl-health-lecture .organ-grid { grid-template-columns: 1fr; }
+  .tpl-health-lecture .comp-vs,
+  .tpl-health-lecture .choice-vs,
+  .tpl-health-lecture .organ-divider { display: none; }
+}

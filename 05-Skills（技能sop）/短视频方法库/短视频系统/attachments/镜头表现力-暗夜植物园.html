@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>镜头表现力 · 暗夜植物园</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* === VIEWPORT BASE === */
+html,body{width:100%;height:100%;margin:0;overflow:hidden;background:#000}.deck-viewport{position:fixed;inset:0;overflow:hidden;background:#000}.deck-stage{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden;transform-origin:0 0}.slide{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;display:block;visibility:hidden;opacity:0;pointer-events:none;z-index:0}.slide.active,.slide.visible{visibility:visible;opacity:1;pointer-events:auto;z-index:1}@media print{html,body{width:1920px;height:auto;overflow:visible;background:#fff}.deck-viewport{position:static;overflow:visible}.deck-stage{position:static;width:auto;height:auto;transform:none!important}.slide{position:relative;display:block!important;visibility:visible!important;opacity:1!important;width:1920px;height:1080px;break-after:page}}@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.2s!important}}
+
+/* === DARK BOTANICAL === */
+:root{--bg:#0f0f0f;--text:#e8e4df;--text2:#9a9590;--warm:#d4a574;--pink:#e8b4b8;--gold:#c9b896;--font-d:'Cormorant',serif;--font-b:'IBM Plex Sans',sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+.slide{font-family:var(--font-b);color:var(--text);background:var(--bg)}
+.slide-inner{position:relative;z-index:1;width:100%;height:100%;padding:80px 120px;display:flex;flex-direction:column}
+.bg-orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:.3;pointer-events:none;z-index:0}
+.sn{position:absolute;bottom:36px;right:60px;font-size:14px;color:var(--text2);letter-spacing:1px}
+.kicker{font-size:16px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:8px}
+h1{font-family:var(--font-d);font-size:130px;font-weight:500;line-height:1.08;color:var(--text)}
+h1 em{font-style:italic;color:var(--warm)}
+h2{font-family:var(--font-d);font-size:90px;font-weight:500;line-height:1.1;color:var(--text)}
+h2 em{font-style:italic;color:var(--warm)}
+.lede{font-size:30px;line-height:1.6;color:var(--text2)}
+.lede-lg{font-size:36px;line-height:1.5;color:var(--text2)}
+/* Center layout */
+.center{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+/* Quote */
+.quote{border-left:4px solid var(--warm);padding:24px 36px;background:rgba(212,165,116,.06);border-radius:0 10px 10px 0;max-width:800px}
+.quote p{font-family:var(--font-d);font-size:34px;font-style:italic;line-height:1.5}
+.quote .s{display:block;font-family:var(--font-b);font-size:16px;font-style:normal;color:var(--gold);margin-top:12px}
+/* Grid 2 cards */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:24px}
+.card{background:rgba(255,255,255,.03);border-radius:14px;padding:32px;border:1px solid rgba(255,255,255,.07)}
+.card h3{font-family:var(--font-d);font-size:34px;font-weight:600;color:var(--warm);margin-bottom:8px}
+.card p{font-size:18px;line-height:1.6;color:var(--text2)}
+/* Step */
+.step{display:flex;gap:24px;padding:20px 28px;background:rgba(255,255,255,.02);border-radius:10px;margin-bottom:12px;border-left:4px solid var(--gold)}
+.step .n{font-family:var(--font-d);font-size:30px;font-weight:700;color:var(--gold);min-width:48px}
+.step h4{font-size:26px;font-weight:500;margin-bottom:4px}
+.step p{font-size:18px;color:var(--text2);line-height:1.5}
+/* 4-card */
+.g4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:20px;margin-top:20px}
+.card-sm{background:rgba(255,255,255,.03);border-radius:10px;padding:20px;border:1px solid rgba(255,255,255,.06)}
+.card-sm h4{font-size:18px;font-weight:500;margin-bottom:4px}
+.card-sm p{font-size:14px;color:var(--text2);line-height:1.4}
+/* Summary */
+.sg{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:700px;margin:0 auto}
+.sc{background:rgba(255,255,255,.03);border-radius:10px;padding:20px;border:1px solid rgba(255,255,255,.06)}
+.sc h4{font-size:20px;color:var(--warm);margin-bottom:4px}
+.sc p{font-size:16px;color:var(--text2)}
+/* Reveal */
+.r{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}.slide.active .r,.slide.visible .r{opacity:1;transform:translateY(0)}
+.r1{transition-delay:.1s}.r2{transition-delay:.2s}.r3{transition-delay:.3s}.r4{transition-delay:.4s}.r5{transition-delay:.5s}
+</style>
+</head>
+<body>
+<div class="deck-viewport"><div class="deck-stage">
+
+<!-- 1: Cover -->
+<section class="slide active">
+  <div class="bg-orb" style="width:800px;height:800px;background:radial-gradient(circle,rgba(212,165,116,.2),transparent);top:-250px;right:-200px"></div>
+  <div class="bg-orb" style="width:600px;height:600px;background:radial-gradient(circle,rgba(232,180,184,.12),transparent);bottom:-150px;left:-100px"></div>
+  <div class="slide-inner center">
+    <p class="kicker r r1">短视频拍摄 · 技能提升</p>
+    <h1 class="r r2" style="margin-top:16px;font-size:150px;">镜头表现力</h1>
+    <h1 class="r r3" style="font-size:80px;margin-top:8px;"><em>让观众感觉你在跟他聊天</em></h1>
+    <p class="lede-lg r r4" style="margin-top:40px;color:var(--text);">👁 眼神 · 😊 表情 · 🤲 肢体 · 🎤 声音</p>
+  </div>
+  <div class="sn">01 / 10</div>
+</section>
+
+<!-- 2: 本质 -->
+<section class="slide">
+  <div class="bg-orb" style="width:500px;height:500px;background:radial-gradient(circle,rgba(201,184,150,.12),transparent);top:200px;right:-100px"></div>
+  <div class="slide-inner">
+    <p class="kicker r r1">核心概念</p>
+    <h2 class="r r2" style="margin-top:4px;">表现力的本质</h2>
+    <div class="quote r r3" style="margin-top:40px;">
+      <p>"表现力不是演，<br>是跟镜头后面的那个人聊天。"</p>
+    </div>
+    <p class="lede r r4" style="margin-top:40px;">很多人镜头前僵硬，是因为在"表演"。<br>好的短视频，本质是<em>一个人在跟另一个人说话</em>。</p>
+    <div class="g2 r r5" style="max-width:900px;">
+      <div class="card"><h3>❌ 表演模式</h3><p>背稿 → 念词 → 等结束<br>观众在屏幕外</p></div>
+      <div class="card"><h3>✅ 交流模式</h3><p>想清楚 → 说清楚 → 看反馈<br>观众就在镜头后</p></div>
+    </div>
+  </div>
+  <div class="sn">02 / 10</div>
+</section>
+
+<!-- 3: 眼神 -->
+<section class="slide">
+  <div class="bg-orb" style="width:600px;height:600px;background:radial-gradient(circle,rgba(232,180,184,.1),transparent);top:-150px;right:-150px"></div>
+  <div class="slide-inner">
+    <p class="kicker r r1">四要素 ①</p>
+    <h2 class="r r2" style="margin-top:4px;">👁 眼神</h2>
+    <p class="lede-lg r r3" style="color:var(--warm);margin-top:12px;">"看镜头后面的人，不是看镜头"</p>
+    <div class="g2 r r4" style="max-width:1000px;margin-top:40px;">
+      <div class="card"><h3>✅ 对的</h3><p>想象一个朋友站在镜头后说话<br>停顿用眼神"定"住</p></div>
+      <div class="card" style="border-left:3px solid var(--pink);"><h3>❌ 不对</h3><p>眼神扫来扫去、飘忽不定<br>全程不看镜头只看提词器</p></div>
+    </div>
+    <p class="r r5" style="font-size:22px;color:var(--gold);margin-top:20px;">💡 小技巧：镜头旁贴一张朋友的照片</p>
+  </div>
+  <div class="sn">03 / 10</div>
+</section>
+
+<!-- 4: 表情 -->
+<section class="slide">
+  <div class="bg-orb" style="width:500px;height:500px;background:radial-gradient(circle,rgba(212,165,116,.12),transparent);bottom:50px;left:-100px"></div>
+  <div class="slide-inner">
+    <p class="kicker r r1">四要素 ②</p>
+    <h2 class="r r2" style="margin-top:4px;">😊 表情</h2>
+    <p class="lede-lg r r3" style="color:var(--warm);margin-top:12px;">"跟着内容走"</p>
+    <div class="g4 r r4" style="margin-top:40px;">
+      <div class="card-sm"><h4>😣 讲痛点</h4><p>微微皱眉，放慢语速<br>"我懂你"</p></div>
+      <div class="card-sm"><h4>😌 讲方案</h4><p>舒展自信<br>"这个靠谱"</p></div>
+      <div class="card-sm"><h4>😄 讲结果</h4><p>真实笑容<br>传递成就感</p></div>
+      <div class="card-sm"><h4>🤨 讲互动</h4><p>眼神发光<br>"你觉得呢？"</p></div>
+    </div>
+    <p class="r r5" style="font-size:22px;color:var(--text2);margin-top:24px;">不是全程微笑，让表情顺着内容自然变化</p>
+  </div>
+  <div class="sn">04 / 10</div>
+</section>
+
+<!-- 5: 肢体 -->
+<section class="slide">
+  <div class="bg-orb" style="width:650px;height:650px;background:radial-gradient(circle,rgba(201,184,150,.1),transparent);top:150px;right:-180px"></div>
+  <div class="slide-inner">
+    <p class="kicker r r1">四要素 ③</p>
+    <h2 class="r r2" style="margin-top:4px;">🤲 肢体</h2>
+    <p class="lede-lg r r3" style="color:var(--warm);margin-top:12px;">"手是第二张嘴"</p>
+    <div class="g2 r r4" style="max-width:1000px;margin-top:40px;">
+      <div class="card"><h3>✅ 做的</h3><p>手放胸前自然活动<br>讲"一"竖手指、"对比"左右分<br>关键处加重手势</p></div>
+      <div class="card" style="border-left:3px solid var(--pink);"><h3>❌ 不做的</h3><p>交叉双臂 · 手插口袋<br>摸头发 · 完全不动</p></div>
+    </div>
+    <p class="r r5" style="font-size:22px;color:var(--gold);margin-top:20px;">💡 开拍前甩甩手放松肩膀</p>
+  </div>
+  <div class="sn">05 / 10</div>
+</section>
+
+<!-- 6: 声音 -->
+<section class="slide">
+  <div class="bg-orb" style="width:500px;height:500px;background:radial-gradient(circle,rgba(232,180,184,.1),transparent);top:-80px;left:150px"></div>
+  <div class="slide-inner">
+    <p class="kicker r r1">四要素 ④</p>
+    <h2 class="r r2" style="margin-top:4px;">🎤 声音</h2>
+    <p class="lede-lg r r3" style="color:var(--warm);margin-top:12px;">"停顿是最大的力量"</p>
+    <div class="g4 r r4" style="margin-top:40px;">
+      <div class="card-sm"><h4>语速</h4><p>关键放慢加重<br>日常正常语速</p></div>
+      <div class="card-sm"><h4>停顿</h4><p>重要内容前顿一秒<br>观众会抬头看你</p></div>
+      <div class="card-sm"><h4>音高</h4><p>问句上扬<br>结论下压</p></div>
+      <div class="card-sm"><h4>语气</h4><p>不要播音腔<br>像跟朋友聊天</p></div>
+    </div>
+  </div>
+  <div class="sn">06 / 10</div>
+</section>
+
+<!-- 7: 拜小人 -->
+<section class="slide">
+  <div class="bg-orb" style="width:600px;height:600px;background:radial-gradient(circle,rgba(212,165,116,.15),transparent);bottom:-120px;right:-120px"></div>
+  <div class="slide-inner">
+    <p class="kicker r r1">实操心法</p>
+    <h2 class="r r2" style="margin-top:4px;">"拜小人"倾诉模式</h2>
+    <p class="lede r r3" style="margin-top:20px;">把镜头当成最信任的朋友，跟他倾诉。</p>
+    <div class="r r4" style="margin-top:24px;">
+      <div class="step"><span class="n">01</span><div><h4>设定一个具体的人</h4><p>不是"观众"，是你朋友张三、你姐、你闺蜜。</p></div></div>
+      <div class="step"><span class="n">02</span><div><h4>用"我跟你讲"开场</h4><p>心理默念后开口，语气会自动变得自然。</p></div></div>
+      <div class="step"><span class="n">03</span><div><h4>忘记镜头，记得人</h4><p>你只是在聊天。卡了就重来，不要"修"。</p></div></div>
+    </div>
+  </div>
+  <div class="sn">07 / 10</div>
+</section>
+
+<!-- 8: 练习 -->
+<section class="slide">
+  <div class="bg-orb" style="width:550px;height:550px;background:radial-gradient(circle,rgba(201,184,150,.08),transparent);top:100px;left:-120px"></div>
+  <div class="slide-inner">
+    <p class="kicker r r1">课后训练</p>
+    <h2 class="r r2" style="margin-top:4px;">每天10分钟，7天见效</h2>
+    <div class="g4 r r3" style="margin-top:40px;">
+      <div class="card-sm"><h4>⏱ 热身 2min</h4><p>对镜子做5个夸张表情<br>惊喜/疑惑/心疼/激动</p></div>
+      <div class="card-sm"><h4>🎬 "拜小人" 3min</h4><p>打开录像，把镜头当朋友<br>讲一件今天的小事</p></div>
+      <div class="card-sm"><h4>👀 回看 3min</h4><p>关声音看画面<br>开声音听语气</p></div>
+      <div class="card-sm"><h4>🔁 改进 2min</h4><p>挑问题重录一遍<br>对比前后差异</p></div>
+    </div>
+    <p class="r r4" style="font-size:22px;color:var(--gold);margin-top:20px;">⭐ 每条进步1%，100条后你是完全不同的人</p>
+  </div>
+  <div class="sn">08 / 10</div>
+</section>
+
+<!-- 9: 误区 -->
+<section class="slide">
+  <div class="bg-orb" style="width:500px;height:500px;background:radial-gradient(circle,rgba(232,180,184,.08),transparent);bottom:80px;right:-80px"></div>
+  <div class="slide-inner">
+    <p class="kicker r r1">避坑指南</p>
+    <h2 class="r r2" style="margin-top:4px;">常见误区</h2>
+    <div class="g2 r r3" style="max-width:1100px;margin-top:40px;">
+      <div class="card"><h3>📖 "要背熟稿子"</h3><p>背稿反而僵硬。记要点，用自己的话讲。</p></div>
+      <div class="card" style="border-left:3px solid var(--pink);"><h3>🎙 "要用播音腔"</h3><p>短视频不是新闻联播，越日常越有亲和力。</p></div>
+      <div class="card"><h3>🎯 "一遍拍好"</h3><p>专业博主拍5-10遍很正常。选最自然的。</p></div>
+      <div class="card" style="border-left:3px solid var(--pink);"><h3>🙅 "我不适合上镜"</h3><p>表现力是练出来的。拍100条再回头看。</p></div>
+    </div>
+  </div>
+  <div class="sn">09 / 10</div>
+</section>
+
+<!-- 10: 总结 -->
+<section class="slide">
+  <div class="bg-orb" style="width:900px;height:900px;background:radial-gradient(circle,rgba(212,165,116,.18),transparent);top:-350px;right:-250px"></div>
+  <div class="bg-orb" style="width:500px;height:500px;background:radial-gradient(circle,rgba(232,180,184,.12),transparent);bottom:-150px;left:-80px"></div>
+  <div class="slide-inner center">
+    <p class="kicker r r1">总结</p>
+    <h1 class="r r2" style="font-size:100px;margin-top:8px;">记住一句话就够了</h1>
+    <p class="r r3" style="font-family:var(--font-d);font-size:44px;font-style:italic;color:var(--warm);margin:30px 0;">表现力不是天赋，<br>是<em style="font-style:italic;">把镜头当成一个人</em>的习惯。</p>
+    <div class="sg r r4" style="margin-top:20px;">
+      <div class="sc"><h4>👁 眼神</h4><p>看镜头后面的人</p></div>
+      <div class="sc"><h4>😊 表情</h4><p>跟着内容走</p></div>
+      <div class="sc"><h4>🤲 肢体</h4><p>手是第二张嘴</p></div>
+      <div class="sc"><h4>🎤 声音</h4><p>停顿是力量</p></div>
+    </div>
+    <p class="r r5" style="font-size:28px;color:var(--text);margin-top:30px;">🎬 打开手机，拍一条。别想太多，拍了再说。</p>
+  </div>
+  <div class="sn">10 / 10</div>
+</section>
+
+</div></div>
+<div class="deck-controls">
+  <button onclick="ps()" style="background:rgba(212,165,116,.3);color:#fff;border:none;padding:10px 24px;border-radius:6px;cursor:pointer;font-size:18px;margin-right:10px;">←</button>
+  <span id="c" style="color:#9a9590;font-size:16px;margin:0 12px;">1/10</span>
+  <button onclick="ns()" style="background:rgba(212,165,116,.3);color:#fff;border:none;padding:10px 24px;border-radius:6px;cursor:pointer;font-size:18px;">→</button>
+</div>
+<script>
+var a=document.querySelectorAll('.slide'),i=0;
+function u(){a.forEach((s,j)=>s.classList.toggle('active',j===i));document.getElementById('c').textContent=(i+1)+'/10'}
+function ns(){i=Math.min(i+1,a.length-1);u()}function ps(){i=Math.max(i-1,0);u()}
+document.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key==='ArrowDown'||e.key===' '){e.preventDefault();ns()}if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();ps()}});
+(function(){var s=document.querySelector('.deck-stage'),r=function(){var w=innerWidth,h=innerHeight,sx=w/1920,sy=h/1080,sc=Math.min(sx,sy);s.style.transform='translate('+(w-1920*sc)/2+'px,'+(h-1080*sc)/2+'px) scale('+sc+')'};r();addEventListener('resize',r)})();u();
+</script>
+</body>
+</html>
