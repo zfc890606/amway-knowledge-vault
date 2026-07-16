@@ -39,6 +39,12 @@ __pycache__/
 .venv/
 env/
 
+# Claude session logs (personal conversations)
+.claudian/
+
+# Obsidian plugin data (personal settings)
+.obsidian/plugins/*/data.json
+
 # Temp files
 *.tmp
 *.temp
