@@ -7,7 +7,7 @@ hooks: 高价值型 + 赚钱省钱型
 scarcity: 体验差 — 我自己做到过，不是看来的
 contrast: 别人教你刷屏，我教你不刷屏也能做
 pipeline:
-  金句素材库匹配: true
+  洞见卡匹配: true
   真实感写作法: true
   开头优化: true
   humanizer-zh: true

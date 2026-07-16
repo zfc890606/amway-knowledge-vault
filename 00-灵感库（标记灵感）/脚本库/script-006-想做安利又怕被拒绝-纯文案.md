@@ -5,7 +5,7 @@ date: 2026-07-14
 pain-point: #8
 style: 聊天式（口语化入场+快速进入主题+有沙子）
 pipeline:
-  金句素材库匹配: true
+  洞见卡匹配: true
   真实感写作法: true
   开头优化: true
   humanizer-zh: true

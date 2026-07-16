@@ -7,7 +7,7 @@ hooks: 危机恐惧型 + 高价值型
 scarcity: 信息差 — 很多人以为脂肪肝是油吃多了，其实是糖吃多了
 contrast: 认知反差 — 你以为的"吃清淡"全是错的
 pipeline:
-  金句素材库匹配: true
+  洞见卡匹配: true
   真实感写作法: true
   开头优化: true
   humanizer-zh: true

@@ -2,7 +2,7 @@
 name: short-video-opening-optimizer
 description: 短视频开头/钩子优化器。分析脚本前3秒，生成高完播率的黄金开头方案，适配抖音、快手、视频号、TikTok、Reels、Shorts等平台。
 ---
-
+开头
 # 🎬 短视频开头优化器 (Short Video Opening Optimizer)
 
 > **黄金3秒法则：** 开头决定完播率，完播率决定推流。

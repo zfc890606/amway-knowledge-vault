@@ -7,7 +7,7 @@ hooks: 愤怒不公型 + 危机恐惧型
 scarcity: 视角差 — 不是你不努力，是你用了过时的方法
 contrast: 做起来了但以前比你还惨
 pipeline:
-  金句素材库匹配: true
+  洞见卡匹配: true
   真实感写作法: true
   开头优化: true
   humanizer-zh: true

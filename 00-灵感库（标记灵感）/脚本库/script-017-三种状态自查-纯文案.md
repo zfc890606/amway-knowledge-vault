@@ -7,7 +7,7 @@ hooks: 愤怒不公型 + 危机恐惧型
 scarcity: 视角差 — 不是你能力有问题，是你滑到了第二第三种状态而不自知
 contrast: 认知反差 — 你以为你累是因为事多，其实是因为把别人的责任背到了自己身上
 pipeline:
-  金句素材库匹配: true
+  洞见卡匹配: true
   真实感写作法: true
   开头优化: true
   humanizer-zh: true

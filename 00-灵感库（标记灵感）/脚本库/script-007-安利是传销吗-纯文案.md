@@ -8,7 +8,7 @@ scarcity: 信息差 — 从底层定义上区分，不是从情绪上争辩
 contrast: 我以前也解释不清楚，后来发现不是话术问题，是我自己都没搞懂
 structure: 自媒体教练三层递进说服架构（病因诊断→机制解释→方案行动）
 pipeline:
-  金句素材库匹配: true
+  洞见卡匹配: true
   真实感写作法: true
   开头优化: true
   humanizer-zh: true

@@ -7,7 +7,7 @@ hooks: 暴力猎奇型 + 愤怒不公型
 scarcity: 视角差 — 用农业革命的历史逻辑分析"你为什么越努力越焦虑"
 contrast: 认知反差 — 你以为的努力在帮你，其实在套牢你
 pipeline:
-  金句素材库匹配: true
+  洞见卡匹配: true
   真实感写作法: true
   开头优化: true
   humanizer-zh: true

@@ -7,7 +7,7 @@ hooks: 八卦窥探型 + 高价值型
 scarcity: 体验差 — 不是背说明书，是用出来的真实感受
 contrast: 经历反差 — 我一开始也觉得贵，后来发现了真相
 pipeline:
-  金句素材库匹配: true
+  洞见卡匹配: true
   真实感写作法: true
   开头优化: true
   humanizer-zh: true

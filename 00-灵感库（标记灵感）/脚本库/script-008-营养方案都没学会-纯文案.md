@@ -7,7 +7,7 @@ hooks: 高价值型 + 赚钱省钱型
 scarcity: 信息差 — 大部分人说"先干起来"，我反着说"先看你有什么"
 contrast: 认知反差 — 你以为我要说赶紧开始，我说先停下来看看自己
 pipeline:
-  金句素材库匹配: true
+  洞见卡匹配: true
   真实感写作法: true
   开头优化: true
   humanizer-zh: true

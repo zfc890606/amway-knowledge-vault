@@ -7,7 +7,7 @@ hooks: 危机恐惧型 + 高价值型
 scarcity: 信息差 — 9亿人没坐过飞机：你以为的"拥挤"，是因为你只看得到五环以内的赛道
 contrast: 认知反差 — 你以为来晚了，其实市场才刚打开
 pipeline:
-  金句素材库匹配: true
+  洞见卡匹配: true
   真实感写作法: true
   开头优化: true
   humanizer-zh: true

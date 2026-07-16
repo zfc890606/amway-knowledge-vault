@@ -7,7 +7,7 @@ hooks: 愤怒不公型 + 危机恐惧型
 scarcity: 视角差 — 别人说你不够努力，我说你努力的方向可能根本是错的
 contrast: 认知反差 — 你以为你要靠"知道了更多"来赢，其实你要靠"承认不知道"来破局
 pipeline:
-  金句素材库匹配: true
+  洞见卡匹配: true
   真实感写作法: true
   开头优化: true
   humanizer-zh: true

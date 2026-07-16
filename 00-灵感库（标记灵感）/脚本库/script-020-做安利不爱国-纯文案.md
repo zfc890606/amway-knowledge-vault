@@ -7,7 +7,7 @@ hooks: 愤怒不公型 + 视觉刺激型
 scarcity: 信息差 — 安利在中国经营三十年，所有产品都在中国生产，所有税收交中国财政
 contrast: 反差 — 你以为安利赚了钱拿回美国，实际上比很多国产品牌还"本土"
 pipeline:
-  金句素材库匹配: true
+  洞见卡匹配: true
   真实感写作法: true
   开头优化: true
   humanizer-zh: true

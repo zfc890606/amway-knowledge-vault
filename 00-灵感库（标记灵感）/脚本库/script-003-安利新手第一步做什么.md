@@ -8,7 +8,7 @@ scarcity: 体验差 — 我是走过来的，不是看来的
 contrast: 我以为我在做安利，其实全搞反了
 structure: 自媒体教练算账式说服 + 个人故事弧线（低谷→转折→方法→验证）
 pipeline:
-  金句素材库匹配: true
+  洞见卡匹配: true
   真实感写作法: true
   开头优化: true
   humanizer-zh: true

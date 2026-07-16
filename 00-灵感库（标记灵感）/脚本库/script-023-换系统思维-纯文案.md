@@ -7,7 +7,7 @@ hooks: 危机恐惧型 + 高价值型
 scarcity: 视角差 — "不是努力不够，是系统该换了"：把"坚持失败"归因从个人能力转向系统问题
 contrast: 认知反差 — 你以为坚持了没结果是"你不行"，其实是"你的系统不行"
 pipeline:
-  金句素材库匹配: true
+  洞见卡匹配: true
   真实感写作法: true
   开头优化: true
   humanizer-zh: true

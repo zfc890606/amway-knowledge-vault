@@ -7,7 +7,7 @@ hooks: 危机恐惧型 + 愤怒不公型
 scarcity: 冲突差 — 说出没人敢说的真话：你不行不是因为不够努力
 contrast: 我跨过来了，所以我知道怎么帮你也跨过来
 pipeline:
-  金句素材库匹配: true
+  洞见卡匹配: true
   真实感写作法: true
   开头优化: true
   humanizer-zh: true

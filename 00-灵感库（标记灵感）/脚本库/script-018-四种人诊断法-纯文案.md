@@ -7,7 +7,7 @@ hooks: 高价值型 + 愤怒不公型
 scarcity: 信息差 — 不是同一个人你怎么说都不动，是你用了同一种方法对所有人
 contrast: 反差 — 你以为问题出在"他不动"，其实问题出在"你用错了药"
 pipeline:
-  金句素材库匹配: true
+  洞见卡匹配: true
   真实感写作法: true
   开头优化: true
   humanizer-zh: true

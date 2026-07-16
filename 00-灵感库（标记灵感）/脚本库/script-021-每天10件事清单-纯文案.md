@@ -7,7 +7,7 @@ hooks: 高价值型 + 赚钱省钱型
 scarcity: 信息差 — 不是让你更忙，是让你知道什么才是"有效动作"
 contrast: 反差 — 你以为做安利需要很多技巧，其实只需要每天做这10件事
 pipeline:
-  金句素材库匹配: true
+  洞见卡匹配: true
   真实感写作法: true
   开头优化: true
   humanizer-zh: true

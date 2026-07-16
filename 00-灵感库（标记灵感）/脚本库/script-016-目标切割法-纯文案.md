@@ -7,7 +7,7 @@ hooks: 高价值型 + 赚钱省钱型
 scarcity: 信息差 — 目标切割法的七成法则：不是所有目标都"切成小块"，而是知道家底在哪
 contrast: 反差 — 你以为定目标是"往上冲"，林博士说是先守住"最低的底"
 pipeline:
-  金句素材库匹配: true
+  洞见卡匹配: true
   真实感写作法: true
   开头优化: true
   humanizer-zh: true

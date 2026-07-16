@@ -7,7 +7,7 @@ hooks: 愤怒不公型 + 危机恐惧型
 scarcity: 视角差 — 别人跟你说"坚持下去"，我告诉你"领导人就是领着一批倒下去的人往前走的"
 contrast: 反差 — 你以为领导人是最厉害的人，其实是那个被拒绝最多还在继续的人
 pipeline:
-  金句素材库匹配: true
+  洞见卡匹配: true
   真实感写作法: true
   开头优化: true
   humanizer-zh: true
